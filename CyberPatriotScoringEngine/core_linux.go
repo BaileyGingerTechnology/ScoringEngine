@@ -8,6 +8,17 @@ import (
 	"strings"
 )
 
+// Check - struct to give the format of an extended check
+// after the core checks in this file
+type Check struct {
+	ID          int
+	Title       string
+	Description string
+	BashCheck   string
+	Function    string
+	Expected    string
+}
+
 // FTPChecks - Checks for best practices in vsftpd.conf
 func FTPChecks(config string) {
 	content, err := ioutil.ReadFile(config)
@@ -159,6 +170,8 @@ func PlatformCommon() {
 
 	fmt.Println("Forensics")
 	ForensicQuestion()
+	fmt.Println("Extras")
+	ExtraChecks()
 
 	// Make post
 	args = []string{"-c", "/usr/local/bin/post_score"}
