@@ -15,7 +15,7 @@ type Check struct {
 	Title       string
 	Description string
 	BashCheck   string
-	Function    string
+	Function    func() string
 	Expected    string
 }
 

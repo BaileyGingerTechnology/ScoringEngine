@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div
+  div
+    nav.navbar.navbar-inverse(role='navigation' style='padding-left:130px;')
+      ul.nav.navbar-nav
+        li.active
+          a(href='/')
+            | Home
+            span.sr-only (current)
+        li
+          a(href='/about') About
+  br
+  .jumbotron
+    h2 Welcome to Ginger Tech!
+    p
+      | We've hired you to fix up and administrate our systems. We recently fired our previous
+      | systems administrator and they retaliated by messing up all of our machines and network.
+    p
+      | All that's left at this point is the system that we had in place to periodically check if
+      | important services are still running and functional, but we're not certain if that box is
+      | untouched.

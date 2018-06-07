@@ -1,35 +1,68 @@
 package main
 
 import (
-	"html/template"
-	"net/http"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
+	"os/exec"
+	"time"
 )
 
-type Todo struct {
-	Title string
-	Done  bool
-}
-
-type TodoPageData struct {
-	PageTitle string
-	Todos     []Todo
+// Check - struct to format checks
+type Check struct {
+	Title    string `json:"title"`
+	Command  string `json:"command"`
+	Expected string `json:"expected"`
+	Good     bool   `json:"good"`
 }
 
 func main() {
-	tmpl := template.Must(template.ParseFiles("layout.html"))
+	os.Setenv("PATH", "/bin:/usr/bin:/sbin:/usr/local/bin")
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		data := TodoPageData{
-			PageTitle: "Scoring Engine",
-			Todos: []Todo{
-				{Title: "Task 1", Done: false},
-				{Title: "Task 2", Done: true},
-				{Title: "Task 3", Done: true},
-				{Title: "Task 4", Done: false},
-			},
+	doEvery(1*time.Minute, check)
+}
+
+func check(t time.Time) {
+	raw, err := ioutil.ReadFile("../ScoringEngine/etc/gingertechengine/checks.json")
+	if err != nil {
+		fmt.Println(err.Error())
+		os.Exit(1)
+	}
+
+	var c []Check
+	json.Unmarshal(raw, &c)
+
+	for i := 0; i < len(c); i++ {
+		var args = []string{"/bin/bash", "-c", c[i].Command}
+		var output = getCommandOutput("sudo", args)
+		if output == c[i].Expected {
+			c[i].Good = true
+		} else if output != c[i].Expected {
+			c[i].Good = false
 		}
-		tmpl.Execute(w, data)
-	})
+	}
 
-	http.ListenAndServe(":8000", nil)
+	currentScore, _ := json.Marshal(c)
+	err = ioutil.WriteFile("../ScoringEngine/etc/gingertechengine/current.json", currentScore, 0644)
+	fmt.Printf("%+v", c)
+}
+
+func getCommandOutput(command string, args []string) (output string) {
+	cmd := exec.Command(command, args...)
+	out, err := cmd.CombinedOutput()
+	if err != nil {
+		log.Fatalf("cmd.Run() failed with %s\n", err)
+	}
+	sha := string(out)
+
+	return sha
+}
+
+// doEvery - Run function f every d length of time
+func doEvery(d time.Duration, f func(time.Time)) {
+	for x := range time.Tick(d) {
+		f(x)
+	}
 }
