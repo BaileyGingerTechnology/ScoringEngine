@@ -25,7 +25,7 @@ func main() {
 }
 
 func check(t time.Time) {
-	raw, err := ioutil.ReadFile("../ScoringEngine/etc/gingertechengine/checks.json")
+	raw, err := ioutil.ReadFile("/etc/gingertechengine/checks.json")
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)
@@ -45,7 +45,7 @@ func check(t time.Time) {
 	}
 
 	currentScore, _ := json.Marshal(c)
-	err = ioutil.WriteFile("../ScoringEngine/etc/gingertechengine/current.json", currentScore, 0644)
+	err = ioutil.WriteFile("/opt/site/wwwroot/js/current.json", currentScore, 0644)
 	fmt.Printf("%+v", c)
 }
 
