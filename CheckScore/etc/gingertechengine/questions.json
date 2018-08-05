@@ -40,5 +40,19 @@
     "question": "What is the current minimum password length? Answer in alphabetic form (One, Two, etc. rather than 1, 2).",
     "answer": "Eight",
     "deployment": "none"
+  },
+  {
+    "id": 6,
+    "os": "linux",
+    "question": "What are the file permissions of the kernel? Example: drwxrwxrwx 1 administrator httpd",
+    "answer": "-rwxr-xr-x 1 root root",
+    "deployment": "none"
+  },
+  {
+    "id": 7,
+    "os": "windows",
+    "question": "There was a massive leak of CIA hacking tools and exploits (mostly to be used against Windows and smart devices), which led to many pieces of\nmalware becoming much more effective and arguments over whether governments should be given special\nbackdoors into computer operating systems. What was the name of this leak?",
+    "answer": "Vault 7",
+    "deployment": "none"
   }
 ]
