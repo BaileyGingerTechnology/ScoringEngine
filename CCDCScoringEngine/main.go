@@ -37,9 +37,9 @@ func check(t time.Time) {
 	for i := 0; i < len(c); i++ {
 		var args = []string{"/bin/bash", "-c", c[i].Command}
 		var output = getCommandOutput("sudo", args)
-		if output == c[i].Expected {
+		if output == c[i].Expected+"\n" {
 			c[i].Good = true
-		} else if output != c[i].Expected {
+		} else if output != c[i].Expected+"\n" {
 			c[i].Good = false
 		}
 	}

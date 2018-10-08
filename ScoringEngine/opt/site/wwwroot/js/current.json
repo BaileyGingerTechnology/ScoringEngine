@@ -2,31 +2,31 @@
   {
     "title": "GingerTech Web",
     "command": "echo GTW",
-    "expected": "GTW\n",
+    "expected": "GTW",
     "good": false
   },
   {
     "title": "GingerTech SSH",
     "command": "echo GTS",
-    "expected": "GTS\n",
+    "expected": "GTS",
     "good": false
   },
   {
     "title": "Arch MySQL",
     "command": "echo AM",
-    "expected": "AM\n",
+    "expected": "AM",
     "good": false
   },
   {
     "title": "Arch PostgreSQL",
     "command": "echo AP",
-    "expected": "AP\n",
+    "expected": "AP",
     "good": false
   },
   {
     "title": "GentWeb Web",
     "command": "echo GTW2",
-    "expected": "GTW2\n",
+    "expected": "GTW2",
     "good": false
   },
   {
