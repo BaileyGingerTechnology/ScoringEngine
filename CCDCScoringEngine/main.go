@@ -38,6 +38,8 @@ func check(t time.Time) {
 	for i := 0; i < len(c); i++ {
 		var args = []string{"/bin/bash", "-c", c[i].Command}
 		var output = getCommandOutput("sudo", args)
+		fmt.Println("Check " + c[i].Title + " return: " + output)
+		AppendStringToFile("/var/log/gingertechnology/scoring.log", time.Now().String()+" | Check "+c[i].Title+" return: "+output)
 		if strings.Contains(output, c[i].Expected) {
 			c[i].Good = true
 		} else if !strings.Contains(output, c[i].Expected) {
@@ -54,7 +56,7 @@ func getCommandOutput(command string, args []string) (output string) {
 	cmd := exec.Command(command, args...)
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		log.Fatalf("cmd.Run() failed with %s\n", err)
+		log.Printf("cmd.Run() failed with %s\n", err)
 	}
 	sha := string(out)
 
@@ -66,4 +68,19 @@ func doEvery(d time.Duration, f func(time.Time)) {
 	for x := range time.Tick(d) {
 		f(x)
 	}
+}
+
+// AppendStringToFile - Add string to the bottom of a file
+func AppendStringToFile(path, text string) error {
+	f, err := os.OpenFile(path, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	_, err = f.WriteString("\n" + text)
+	if err != nil {
+		return err
+	}
+	return nil
 }
