@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"strings"
 	"time"
 )
 
@@ -37,9 +38,9 @@ func check(t time.Time) {
 	for i := 0; i < len(c); i++ {
 		var args = []string{"/bin/bash", "-c", c[i].Command}
 		var output = getCommandOutput("sudo", args)
-		if output == c[i].Expected+"\n" {
+		if strings.Contains(output, c[i].Expected) {
 			c[i].Good = true
-		} else if output != c[i].Expected+"\n" {
+		} else if !strings.Contains(output, c[i].Expected) {
 			c[i].Good = false
 		}
 	}

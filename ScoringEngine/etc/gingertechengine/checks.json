@@ -1,68 +1,74 @@
 [
   {
-    "title": "GingerTech Web",
-    "command": "echo GTW",
-    "expected": "GTW\n",
+    "title": "Dave Web",
+    "command": "curl 172.16.16.38",
+    "expected": "Subscribe to our newsletter",
     "good": false
   },
   {
-    "title": "GingerTech SSH",
-    "command": "echo GTS",
-    "expected": "GTS\n",
+    "title": "Dave SSH",
+    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.38 -password scoringengine -user scoringengine",
+    "expected": "Successful login",
     "good": false
   },
   {
-    "title": "Arch MySQL",
-    "command": "echo AM",
-    "expected": "AM\n",
+    "title": "Dave FTP",
+    "command": "/var/lib/gingertechengine/check-ftp -ip 172.16.16.38",
+    "expected": "Successful connection",
     "good": false
   },
   {
-    "title": "Arch PostgreSQL",
-    "command": "echo AP",
-    "expected": "AP\n",
+    "title": "Kevin Web",
+    "command": "curl 172.16.16.51",
+    "expected": "bestsellers",
     "good": false
   },
   {
-    "title": "GentWeb Web",
-    "command": "echo GTW2",
-    "expected": "GTW2\n",
+    "title": "Kevin SSH",
+    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.51 -password scoringengine -user scoringengine",
+    "expected": "Successful login",
     "good": false
   },
   {
-    "title": "GentWeb SSH",
-    "command": "echo GTS2",
-    "expected": "GTS2",
+    "title": "Kevin FTP",
+    "command": "/var/lib/gingertechengine/check-ftp -ip 172.16.16.51",
+    "expected": "Successful connection",
     "good": false
   },
   {
-    "title": "CentShip Chat Server",
-    "command": "echo CSCS",
-    "expected": "CSCS",
+    "title": "Stuart Web",
+    "command": "curl --insecure https://172.16.16.24",
+    "expected": "301",
     "good": false
   },
   {
-    "title": "FreeBSD Web",
-    "command": "echo FBW",
-    "expected": "FBW",
+    "title": "Stuart SSH",
+    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.24 -password scoringengine -user scoringengine",
+    "expected": "Successful login",
     "good": false
   },
   {
-    "title": "FreeBSD Database",
-    "command": "echo FBD",
-    "expected": "FBD",
+    "title": "Stuart POP3",
+    "command": "/var/lib/gingertechengine/check-pop3 -ip 172.16.16.24 -password scoringengine -user scoringengine",
+    "expected": "Successful connection",
     "good": false
   },
   {
-    "title": "Domain Controller DNS",
-    "command": "echo DCD",
-    "expected": "DCD",
+    "title": "Stuart SMTP",
+    "command": "/var/lib/gingertechengine/check-smtp -ip 172.16.16.24 -password scoringengine -user scoringengine",
+    "expected": "Successful connection",
     "good": false
   },
   {
-    "title": "Domain Controller Mail",
-    "command": "echo DCM",
-    "expected": "DCM",
+    "title": "Gru DNS",
+    "command": "nslookup google.com 172.16.16.49",
+    "expected": "172.217.14.110",
+    "good": false
+  },
+  {
+    "title": "Nefario DNS",
+    "command": "nslookup google.com 172.16.16.3",
+    "expected": "172.217.14.110",
     "good": false
   }
 ]
