@@ -1,5 +1,11 @@
 [
   {
+    "title": "Integrity of Scoring Engine",
+    "command": "echo working",
+    "expected": "working",
+    "good": false
+  },
+  {
     "title": "Dave Web",
     "command": "curl 172.16.16.38",
     "expected": "Subscribe to our newsletter",

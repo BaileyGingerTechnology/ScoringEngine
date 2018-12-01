@@ -4,6 +4,7 @@ After=network.target
 [Service]
 Type=oneshot
 User=root
-ExecStart=/bin/bash -c '/usr/bin/scoringengine &' ; /bin/bash -c 'dotnet run --project /opt/site &'
+ExecStart=/bin/bash -c '/usr/bin/scoringengine &'
+ExecStart=/bin/bash -c 'dotnet run --project /opt/site &'
 [Install]
 WantedBy=multi-user.target
