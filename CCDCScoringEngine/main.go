@@ -49,6 +49,9 @@ func check(t time.Time) {
 
 	currentScore, _ := json.Marshal(c)
 	err = ioutil.WriteFile("/opt/site/wwwroot/js/current.json", currentScore, 0644)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
 	fmt.Printf("%+v", c)
 }
 
