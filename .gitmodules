@@ -1,4 +1,6 @@
+
 [submodule "ScoringSources"]
 	path = ScoringSources
-	url = https://github.com/BaileyKasin/ScoringSources.git
-	ignore = dirty
+	url = https://github.com/BKasin/ScoringSources.git
+  branch = master
+  ignore = dirty

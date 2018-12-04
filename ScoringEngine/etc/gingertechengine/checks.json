@@ -67,14 +67,14 @@
   },
   {
     "title": "Gru DNS",
-    "command": "nslookup google.com 172.16.16.49",
-    "expected": "172.217.14.110",
+    "command": "/var/lib/gingertechengine/check-dns -domain angrysysadmins.tech -record A -server 172.16.16.49",
+    "expected": "45.77.71.224",
     "good": false
   },
   {
     "title": "Nefario DNS",
-    "command": "nslookup google.com 172.16.16.3",
-    "expected": "172.217.14.110",
+    "command": "/var/lib/gingertechengine/check-dns -domain angrysysadmins.tech -record A -server 172.16.16.3",
+    "expected": "45.77.71.224",
     "good": false
   }
 ]

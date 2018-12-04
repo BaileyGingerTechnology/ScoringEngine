@@ -4,12 +4,6 @@ The scoring engine from PackerSystems.
 I've decided to separate out the sub-projects of PackerSystems into their own repos for easier management.
 This is the scoring engine portion and I will be fleshing out documentation on it more in the coming days and weeks.
 
-### Support this project:
-
-I plan to keep this project completely free to make use of. If you wish to support me in some way, you can become a patron of mine on Patreon here:
-
-https://www.patreon.com/GingerTechnology
-
 ## CyberPatriot
 The CyberPatriot portion of this engine is definitely the more simple part. For the Linux side, the main "core" set of checks are currently still
 some functions that called. I will be converting them to the new method soon.
@@ -28,3 +22,13 @@ from the JSON file.
 
 Every three minutes the scoring service will iterate through the check.json file in /etc/gingertechengine/ running each one. At the end it will dump the
 result into a new file called current.json, which is what gets looked at by the dotnet site. 
+
+### Support this project:
+
+I plan to keep this project completely free to make use of. If you wish to support me in some way, you can become a patron of mine on Patreon here:
+
+https://www.patreon.com/GingerTechnology
+
+Or send me feedback at:
+
+bailey@gingertechnology.net
