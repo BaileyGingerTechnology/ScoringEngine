@@ -22,7 +22,7 @@ type Check struct {
 func main() {
 	os.Setenv("PATH", "/bin:/usr/bin:/sbin:/usr/local/bin")
 
-	doEvery(1*time.Minute, check)
+	doEvery(3*time.Minute, check)
 }
 
 func check(t time.Time) {

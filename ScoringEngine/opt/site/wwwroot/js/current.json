@@ -6,75 +6,63 @@
     "good": false
   },
   {
-    "title": "Dave Web",
-    "command": "curl 172.16.16.38",
-    "expected": "Subscribe to our newsletter",
-    "good": false
-  },
-  {
-    "title": "Dave SSH",
-    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.38 -password scoringengine -user scoringengine",
+    "title": "White SSH",
+    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.5 -password scoringengine -user scoringengine",
     "expected": "Successful login",
     "good": false
   },
   {
-    "title": "Dave FTP",
-    "command": "/var/lib/gingertechengine/check-ftp -ip 172.16.16.38",
-    "expected": "Successful connection",
+    "title": "White Web",
+    "command": "curl 172.16.16.5",
+    "expected": "DOCTYPE",
     "good": false
   },
   {
-    "title": "Kevin Web",
-    "command": "curl 172.16.16.51",
-    "expected": "bestsellers",
-    "good": false
-  },
-  {
-    "title": "Kevin SSH",
-    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.51 -password scoringengine -user scoringengine",
+    "title": "D'Lacey SSH",
+    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.7 -password scoringengine -user scoringengine",
     "expected": "Successful login",
     "good": false
   },
   {
-    "title": "Kevin FTP",
-    "command": "/var/lib/gingertechengine/check-ftp -ip 172.16.16.51",
-    "expected": "Successful connection",
+    "title": "D'Lacey Web",
+    "command": "curl 172.16.16.7",
+    "expected": "owncloud",
     "good": false
   },
   {
-    "title": "Stuart Web",
-    "command": "curl --insecure https://172.16.16.24",
-    "expected": "301",
-    "good": false
-  },
-  {
-    "title": "Stuart SSH",
-    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.24 -password scoringengine -user scoringengine",
+    "title": "Maas SSH",
+    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.15 -password scoringengine -user scoringengine",
     "expected": "Successful login",
     "good": false
   },
   {
-    "title": "Stuart POP3",
-    "command": "/var/lib/gingertechengine/check-pop3 -ip 172.16.16.24 -password scoringengine -user scoringengine",
-    "expected": "Successful connection",
+    "title": "Falls SSH",
+    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.20 -password scoringengine -user scoringengine",
+    "expected": "Successful login",
     "good": false
   },
   {
-    "title": "Stuart SMTP",
-    "command": "/var/lib/gingertechengine/check-smtp -ip 172.16.16.24 -password scoringengine -user scoringengine",
-    "expected": "Successful connection",
+    "title": "Falls Web",
+    "command": "curl 172.16.16.20",
+    "expected": "Mattermost",
     "good": false
   },
   {
-    "title": "Gru DNS",
-    "command": "nslookup google.com 172.16.16.49",
-    "expected": "172.217.14.110",
+    "title": "Beddor SSH",
+    "command": "/var/lib/gingertechengine/check-ssh -ip 172.16.16.30 -password scoringengine -user scoringengine",
+    "expected": "Successful login",
     "good": false
   },
   {
-    "title": "Nefario DNS",
-    "command": "nslookup google.com 172.16.16.3",
-    "expected": "172.217.14.110",
+    "title": "Rowling Web",
+    "command": "curl 172.16.16.31",
+    "expected": "DOCTYPE",
+    "good": false
+  },
+  {
+    "title": "Riordan DNS",
+    "command": "/var/lib/gingertechengine/check-dns -domain angrysysadmins.tech -record A -server 172.16.16.50",
+    "expected": "45.77.71.224",
     "good": false
   }
 ]
