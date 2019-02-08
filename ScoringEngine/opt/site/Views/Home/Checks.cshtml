@@ -1,11 +1,10 @@
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script>
     $(document).ready(function () {
-        //Call EmpDetails jsonResult Method
         $.getJSON("Home/Checks",
         function (json) {
         var tr;
-        //Append each row to html table
+        // Append each row to html table
         for (var i = 0; i < json.length; i++) {
                 tr = $('<tr/>');
                 tr.append("<td>" + json[i].title + "</td>");

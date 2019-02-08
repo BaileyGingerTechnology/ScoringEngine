@@ -19,9 +19,16 @@ namespace site.Controllers
             return View();
         }
 
+        public IActionResult Injects()
+        {
+            ViewData["Message"] = "Injects";
+
+            return View();
+        }
+
         public IActionResult About()
         {
-            ViewData["Message"] = "About Packer Systems.";
+            ViewData["Message"] = "About Packer Systems";
 
             return View();
         }
@@ -34,6 +41,17 @@ namespace site.Controllers
         public JsonResult Checks()
         {
             using (StreamReader r = new StreamReader("wwwroot/js/current.json"))
+            {
+                string json = r.ReadToEnd();
+                List<Check> checks = JsonConvert.DeserializeObject<List<Check>>(json);
+                //return list as Json
+                return Json(checks);
+            }
+        }
+
+        public JsonResult InjectList()
+        {
+            using (StreamReader r = new StreamReader("wwwroot/js/injects.json"))
             {
                 string json = r.ReadToEnd();
                 List<Check> checks = JsonConvert.DeserializeObject<List<Check>>(json);

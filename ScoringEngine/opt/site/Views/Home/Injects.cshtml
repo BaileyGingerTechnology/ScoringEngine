@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Injects";
+}
+<h3>@ViewData["Message"]</h3>
+
+<p>
+    Yeah, so the CEO has some tasks for you to take care of in addition to getting the servers working.
+</p>
+
+<p>
+    Here's what the CEO wants:
+</p>
+<div style="margin-top:20px">
+@Html.Partial("InjectList")
+</div>
