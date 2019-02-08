@@ -38,6 +38,12 @@ namespace site.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        public IActionResult LogServer()
+        {
+            ViewData["Message"] = "Log Server";
+            return View();
+        }
+
         public JsonResult Checks()
         {
             using (StreamReader r = new StreamReader("wwwroot/js/current.json"))

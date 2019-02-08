@@ -1,6 +1,12 @@
 [
   {
     "title": "Welcome to Ginger Tech!",
+    "link": "/Home/About",
     "good": true
+  },
+  {
+    "title": "Log Server",
+    "link": "/Home/Inject/LogServer",
+    "good": false
   }
 ]

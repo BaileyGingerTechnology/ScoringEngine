@@ -7,7 +7,7 @@
         // Append each row to html table
         for (var i = 0; i < json.length; i++) {
                 tr = $('<tr/>');
-                tr.append("<td>" + json[i].title + "</td>");
+                tr.append("<td><a href='" + json[i].link + "'>" + json[i].title + "</a></td>");
                 if(json[i].good == true) {
                     tr.append("<td><font color='green'>" + json[i].good + "</font></td>");
                 }
