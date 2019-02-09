@@ -6,6 +6,7 @@ namespace site.Models
   {
     public string title { get; set; }
     public string link { get; set; }
-    public bool good { get; set; }
+    public int score { get; set; }
+    public bool entered { get; set; }
   }
 }

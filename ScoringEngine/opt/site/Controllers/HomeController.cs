@@ -60,9 +60,9 @@ namespace site.Controllers
             using (StreamReader r = new StreamReader("wwwroot/js/injects.json"))
             {
                 string json = r.ReadToEnd();
-                List<Check> checks = JsonConvert.DeserializeObject<List<Check>>(json);
+                List<Inject> injects = JsonConvert.DeserializeObject<List<Inject>>(json);
                 //return list as Json
-                return Json(checks);
+                return Json(injects);
             }
         }
     }

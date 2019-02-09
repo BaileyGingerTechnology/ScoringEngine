@@ -1,0 +1,5 @@
+Welcome to Ginger Tech! Here you will find the injects given by the CEO. This is just an example one.
+
+Typically, an inject will require you to complete some task that would be expected in a normal business
+environmet. Examples of this would be things like setting up a log server, taking inventory of servers,
+or creating acceptable use policies.

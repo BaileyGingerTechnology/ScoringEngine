@@ -1,12 +1,14 @@
 [
   {
     "title": "Welcome to Ginger Tech!",
-    "link": "/Home/About",
-    "good": true
+    "link": "/injects/welcome.txt",
+    "score": "100",
+    "entered": true
   },
   {
     "title": "Log Server",
-    "link": "/Home/Inject/LogServer",
-    "good": false
+    "link": "/injects/logserver.txt",
+    "score": "0",
+    "entered": false
   }
 ]
