@@ -9,6 +9,11 @@ import (
 	"os/exec"
 	"strings"
 	"time"
+	"flag"
+)
+
+var (
+	interval = flag.Int("interval", 3, "Time between check rounds")
 )
 
 // Check - struct to format checks
@@ -20,9 +25,10 @@ type Check struct {
 }
 
 func main() {
+	flag.Parse()
 	os.Setenv("PATH", "/bin:/usr/bin:/sbin:/usr/local/bin")
 
-	doEvery(3*time.Minute, check)
+	doEvery(time.Duration(*interval)*time.Minute, check)
 }
 
 func check(t time.Time) {
