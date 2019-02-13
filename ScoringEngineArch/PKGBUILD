@@ -1,0 +1,22 @@
+# Maintainer: Bailey Kasin <bailey@gingertechnology.net> (https://angrysysadmins.tech)
+
+pkgname=scoringengine-bin
+pkgver=1.4
+pkgrel=1
+pkgdesc="Checks to see if required services are still running on important machines."
+arch=('x86_64')
+url="https://angrysysadmins.tech"
+license=('MIT')
+optdepends=('nginx')
+source=("ScoringEngine.deb")
+options=('!strip' '!emptydirs')
+install=${pkgname}.install
+noextract=("ScoringEngine.deb")
+sha256sums=('0b8262f9e5dfee50143a2939fb9358b3ca7ab97b961a595ec1bb3fbf4e3866ab')
+
+package() {
+    bsdtar -O -xf ScoringEngine.deb data.tar.xz | bsdtar -C "${pkgdir}" -xJf -
+
+    # Permission fix
+    find "${pkgdir}" -type d -exec chmod 755 {} +
+}
