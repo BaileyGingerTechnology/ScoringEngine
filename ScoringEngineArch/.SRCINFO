@@ -1,0 +1,18 @@
+pkgbase = scoringengine-bin
+	pkgdesc = Checks to see if required services are still running on important machines.
+	pkgver = 1.4
+	pkgrel = 1
+	url = https://angrysysadmins.tech
+	install = scoringengine-bin.install
+	arch = x86_64
+	license = MIT
+	depends = libarchive
+	optdepends = nginx
+	noextract = ScoringEngine.deb
+	options = !strip
+	options = !emptydirs
+	source = ScoringEngine.deb
+	sha256sums = db39158f117147452f30f12731d229d0afe3d6c333703027960291c77b162512
+
+pkgname = scoringengine-bin
+
