@@ -1,7 +1,7 @@
 pkgbase = scoringengine-bin
 	pkgdesc = Checks to see if required services are still running on important machines.
-	pkgver = 1.4
-	pkgrel = 1
+	pkgver = 1.3
+	pkgrel = 2
 	url = https://angrysysadmins.tech
 	install = scoringengine-bin.install
 	arch = x86_64
@@ -12,7 +12,7 @@ pkgbase = scoringengine-bin
 	options = !strip
 	options = !emptydirs
 	source = ScoringEngine.deb
-	sha256sums = db39158f117147452f30f12731d229d0afe3d6c333703027960291c77b162512
+	sha256sums = 20f048158407a34b014d02efb138868daafa49f4230771a346e98f42879113e3
 
 pkgname = scoringengine-bin
 

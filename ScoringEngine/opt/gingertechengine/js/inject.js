@@ -6,7 +6,7 @@ function replaceText(title, file) {
         if (rawFile.readyState === 4) {
             if (rawFile.status === 200 || rawFile.status == 0) {
                 var allText = rawFile.responseText;
-                document.getElementById('InjectContent').textContent = allText;
+                document.getElementById('InjectContent').innerHTML = marked(allText);
             }
         }
     }
@@ -20,15 +20,16 @@ $(document).ready(function () {
             // Append each row to html table
             for (var i = 0; i < json.length; i++) {
                 tr = $('<tr/>');
-                tr.append("<td>" + json[i].title + "</td>");
-                if (json[i].good == true) {
-                    tr.append("<td><font color='green'>" + json[i].good + "</font></td>");
+                tr.append("<td><a href='#' onClick='replaceText(\"" + json[i].title + "\",\"" + json[i].link + "\");'>" + json[i].title + "</a></td>");
+                tr.append("<td>" + json[i].score + "</td>");
+                if (json[i].entered == true) {
+                    tr.append("<td><font color='green'>" + json[i].entered + "</font></td>");
                 }
-                else if (json[i].good == false) {
-                    tr.append("<td><font color='red'>" + json[i].good + "</font></td>");
+                else if (json[i].entered == false) {
+                    tr.append("<td><font color='red'>" + json[i].entered + "</font></td>");
                 }
-                tr.append("<td>" + json[i].asof + "</td>");
                 $('table').append(tr);
             }
         });
+
 });
