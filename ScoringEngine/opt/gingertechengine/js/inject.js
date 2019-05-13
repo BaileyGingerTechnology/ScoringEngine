@@ -22,6 +22,8 @@ $(document).ready(function () {
                 tr = $('<tr/>');
                 tr.append("<td><a href='#' onClick='replaceText(\"" + json[i].title + "\",\"" + json[i].link + "\");'>" + json[i].title + "</a></td>");
                 tr.append("<td>" + json[i].score + "</td>");
+                tr.append("<td>" + json[i].start + "</td>");
+                tr.append("<td>" + json[i].end + "</td>");
                 if (json[i].entered == true) {
                     tr.append("<td><font color='green'>" + json[i].entered + "</font></td>");
                 }

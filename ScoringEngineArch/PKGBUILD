@@ -13,7 +13,7 @@ source=("ScoringEngine.deb")
 options=('!strip' '!emptydirs')
 install=${pkgname}.install
 noextract=("ScoringEngine.deb")
-sha256sums=('20f048158407a34b014d02efb138868daafa49f4230771a346e98f42879113e3')
+sha256sums=('d74e86df6bdc7621f2cf0579597d297646e9b541513e670b48f2d6cedc0078b4')
 
 package() {
     bsdtar -O -xf ScoringEngine.deb data.tar.xz | bsdtar -C "${pkgdir}" -xJf -

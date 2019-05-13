@@ -1,0 +1,8 @@
+The order I suggest doing these sample injects in is:
+
+1. inventory
+2. nmap and webservers at the same time
+3. logserver
+4. domain
+
+Depending on what the focus of the pracice is, maybe add some pure policy ones.

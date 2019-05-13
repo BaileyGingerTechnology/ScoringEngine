@@ -1,14 +1,18 @@
 [
   {
     "title": "Welcome to Ginger Tech!",
-    "link": "/injects/welcome.txt",
+    "link": "/injects/welcome.md",
     "score": "100",
+    "start": "00:00",
+    "end": "00:00",
     "entered": true
   },
   {
-    "title": "Log Server",
-    "link": "/injects/logserver.txt",
+    "title": "Inventory",
+    "link": "/injects/inventory.md",
     "score": "0",
+    "start": "00:00",
+    "end": "01:00",
     "entered": false
   }
 ]
